@@ -4,12 +4,20 @@ use std::path::Path;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about=None)]
+/// 自动删除文件名当中的非法字符
+/// 1. 会自动跳过隐藏文件和目录
+/// 2. 递归目录下的所有文件
 struct RsfnArg {
     #[arg(long, default_value_t=String::from("."))]
+    /// 需要处理的目录，默认当前目录
     path: String,
+
     #[arg(long, default_value_t=String::from(""))]
+    /// 需要被替换的字符
     pam: String,
+
     #[arg(long, default_value_t=String::from(""))]
+    /// 将 pam 替换为 to，to 默认为 ""，即删除 pam
     to: String,
 }
 
@@ -52,8 +60,8 @@ fn rsfn(p: &str, pam: &str, to: &str) {
 
 fn term(s: &str) -> String {
     let term = vec![
-        '（', '）', '，', '；', '！', '：', '、', '。', '【', '】', '(', ')', ' ', '[', ']', ':',
-        '「', '」', '\'', '"', '|', '<', '>', '《', '》', ']', '[', ';', '?',
+        '（', '）', '，', '；', '！', '：', '”', '“', '、', '。', '【', '】', '(', ')', ' ', '[',
+        ']', ':', '「', '」', '\'', '"', '|', '<', '>', '《', '》', ']', '[', ';', '?',
     ];
     let mut res = String::from(s);
     for v in term {

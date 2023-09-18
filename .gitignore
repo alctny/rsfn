@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,rust,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux,rust,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/macos,linux,visualstudiocode,xcode,rust
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux,visualstudiocode,xcode,rust
 
 ### Linux ###
 *~
@@ -23,7 +23,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -65,12 +66,7 @@ Cargo.lock
 *.pdb
 
 ### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+.vscode
 
 # Local History for Visual Studio Code
 .history/
@@ -83,31 +79,22 @@ Cargo.lock
 .history
 .ionide
 
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
+### Xcode ###
+## User settings
+xcuserdata/
 
-# Dump file
-*.stackdump
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
 
-# Folder config file
-[Dd]esktop.ini
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,rust,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/macos,linux,visualstudiocode,xcode,rust
 n
